@@ -1,0 +1,9 @@
+C:\Users\Linds\Desktop\C#\200425671A1\200425671A1\bin\Debug\200425671A1.exe.config
+C:\Users\Linds\Desktop\C#\200425671A1\200425671A1\bin\Debug\200425671A1.exe
+C:\Users\Linds\Desktop\C#\200425671A1\200425671A1\bin\Debug\200425671A1.pdb
+C:\Users\Linds\Desktop\C#\200425671A1\200425671A1\obj\Debug\200425671A1.csprojAssemblyReference.cache
+C:\Users\Linds\Desktop\C#\200425671A1\200425671A1\obj\Debug\_200425671A1.Properties.Resources.resources
+C:\Users\Linds\Desktop\C#\200425671A1\200425671A1\obj\Debug\200425671A1.csproj.GenerateResource.cache
+C:\Users\Linds\Desktop\C#\200425671A1\200425671A1\obj\Debug\200425671A1.exe
+C:\Users\Linds\Desktop\C#\200425671A1\200425671A1\obj\Debug\200425671A1.pdb
+C:\Users\Linds\Desktop\C#\200425671A1\200425671A1\obj\Debug\_200425671A1.Form1.resources
