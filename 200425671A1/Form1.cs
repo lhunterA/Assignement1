@@ -22,12 +22,12 @@ namespace _200425671A1
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
-        {
-           
+        {           
             String total = txtTotal.Text;
             String paid = txtPaid.Text;
             double numberT;
             double numberP;
+
             if (Double.TryParse(total, out numberT) && Double.TryParse(paid, out numberP))//if the two inputs are a valid number.
             {
                 change = numberP - numberT; //change is paid - total
@@ -36,8 +36,8 @@ namespace _200425671A1
                 if (numberP >= numberT) //if the paid amount is greater than total. 
                 {
                     FindChange(2);
-                    txtToonies.Text = counter.ToString();
-                    counter = 0;
+                    txtToonies.Text = counter.ToString(); //use the counter from FindChaneg and assign to the correct textbox
+                    counter = 0; //reset counter to 0 before using it in the next method. 
                     FindChange(1);
                     txtLoonies.Text = counter.ToString();
                     counter = 0;
@@ -55,17 +55,16 @@ namespace _200425671A1
                     {
                         txtNickels.Text = "1";
                     }
-
                 }
-                else
+                else / when paid isn't high enough
                 {
-                    MessageBox.Show("Please, input a higher paid amount");//when paid isn't high enough
+                    MessageBox.Show("Please, input a higher paid amount");/
                     return; //return to fix the mistake
                 }
             }
-            else
+            else //when they add a letter to the amount of total or paid
             {
-                MessageBox.Show("Invalid Numeric Input. Please add a valid number.");//when they add a letter
+                MessageBox.Show("Invalid Numeric Input. Please add a valid number.");
                 return; //let them fix the mistake
             } 
         } //end the button calculate click event
@@ -83,14 +82,17 @@ namespace _200425671A1
             txtNickels.Text = "";
         }
 
-        public void FindChange(double coin)
+        /// <summary>
+        /// A method that takes the coin amount to be determined on how much to give back.
+        /// </summary>
+        /// <param name="coin">the value of coin you want change out of</param>
+        public void FindChange(double coin) 
         {
-            while (change>=coin)
+            while (change>=coin) //while the amount of change left is larger than the biggest potential change back
             {
-                change -= coin;
-                counter++;
+                change -= coin; //change minus the amount of the coin
+                counter++; //add to a counter
             }
-
         }
     }
 }
