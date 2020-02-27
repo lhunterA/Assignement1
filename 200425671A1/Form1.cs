@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _200425671A1
@@ -31,14 +24,14 @@ namespace _200425671A1
             if (Double.TryParse(total, out numberT) && Double.TryParse(paid, out numberP))//if the two inputs are a valid number.
             {
                 change = numberP - numberT; //change is paid - total
-                txtChange.Text = change.ToString(); //output the change to the textbox as a string
+                txtChange.Text = "$" + change.ToString(); //output the change to the textbox as a string
 
                 if (numberP >= numberT) //if the paid amount is greater than total. 
                 {
                     FindChange(2);
                     txtToonies.Text = counter.ToString(); //use the counter from FindChaneg and assign to the correct textbox
                     counter = 0; //reset counter to 0 before using it in the next method. 
-                    FindChange(1);
+                    FindChange(1); //repeat for all coin amounts
                     txtLoonies.Text = counter.ToString();
                     counter = 0;
                     FindChange(0.25);
@@ -49,22 +42,24 @@ namespace _200425671A1
                     counter = 0;
                     if (change <= 0.02)
                     {
-                        txtNickels.Text = "0";
+                        txtNickels.Text = "0"; //depending on the amount leftover assign the correct nickel amount to the change. 
                     }
                     else
                     {
                         txtNickels.Text = "1";
                     }
                 }
-                else / when paid isn't high enough
+                else // when paid isn't high enough to cover the total
                 {
-                    MessageBox.Show("Please, input a higher paid amount");/
+                    txtChange.Text = " "; //makes it so that no negative number will display.
+                    MessageBox.Show("Please, input a higher paid amount");
                     return; //return to fix the mistake
                 }
             }
             else //when they add a letter to the amount of total or paid
             {
                 MessageBox.Show("Invalid Numeric Input. Please add a valid number.");
+                txtChange.Text = " ";
                 return; //let them fix the mistake
             } 
         } //end the button calculate click event
@@ -73,10 +68,10 @@ namespace _200425671A1
         {
             //Clear all the input boxes on the form
             txtTotal.Text = "";
-            txtPaid.Text = "";
             txtChange.Text = "";
-            txtToonies.Text = "";
             txtLoonies.Text = "";
+            txtToonies.Text = "";
+            txtPaid.Text = "";
             txtQuarters.Text = "";
             txtDimes.Text = "";
             txtNickels.Text = "";
@@ -93,6 +88,11 @@ namespace _200425671A1
                 change -= coin; //change minus the amount of the coin
                 counter++; //add to a counter
             }
+        }
+
+        private void txtLoonies_TextChanged(object sender, EventArgs e)
+        {
+            //i didn't know how to delete this event handler without breaking the project so I left it. 
         }
     }
 }

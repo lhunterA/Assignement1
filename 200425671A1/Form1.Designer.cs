@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.txtLoonies = new System.Windows.Forms.TextBox();
+            this.txtPaid = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtQuarters = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,9 +38,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNickels = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPaid = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtChange = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtLoonies = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtToonies = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,13 +64,13 @@
             this.txtTotal.Size = new System.Drawing.Size(79, 22);
             this.txtTotal.TabIndex = 1;
             // 
-            // txtLoonies
+            // txtPaid
             // 
-            this.txtLoonies.Location = new System.Drawing.Point(103, 172);
-            this.txtLoonies.Name = "txtLoonies";
-            this.txtLoonies.ReadOnly = true;
-            this.txtLoonies.Size = new System.Drawing.Size(79, 22);
-            this.txtLoonies.TabIndex = 3;
+            this.txtPaid.Location = new System.Drawing.Point(103, 52);
+            this.txtPaid.Name = "txtPaid";
+            this.txtPaid.Size = new System.Drawing.Size(79, 22);
+            this.txtPaid.TabIndex = 3;
+            this.txtPaid.TextChanged += new System.EventHandler(this.txtLoonies_TextChanged);
             // 
             // label2
             // 
@@ -132,12 +132,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Nickels";
             // 
-            // txtPaid
+            // txtChange
             // 
-            this.txtPaid.Location = new System.Drawing.Point(103, 52);
-            this.txtPaid.Name = "txtPaid";
-            this.txtPaid.Size = new System.Drawing.Size(79, 22);
-            this.txtPaid.TabIndex = 11;
+            this.txtChange.Location = new System.Drawing.Point(193, 52);
+            this.txtChange.Name = "txtChange";
+            this.txtChange.ReadOnly = true;
+            this.txtChange.Size = new System.Drawing.Size(79, 22);
+            this.txtChange.TabIndex = 11;
             // 
             // label6
             // 
@@ -148,13 +149,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Paid";
             // 
-            // txtChange
+            // txtLoonies
             // 
-            this.txtChange.Location = new System.Drawing.Point(188, 52);
-            this.txtChange.Name = "txtChange";
-            this.txtChange.ReadOnly = true;
-            this.txtChange.Size = new System.Drawing.Size(79, 22);
-            this.txtChange.TabIndex = 13;
+            this.txtLoonies.Location = new System.Drawing.Point(103, 172);
+            this.txtLoonies.Name = "txtLoonies";
+            this.txtLoonies.ReadOnly = true;
+            this.txtLoonies.Size = new System.Drawing.Size(79, 22);
+            this.txtLoonies.TabIndex = 13;
             // 
             // label7
             // 
@@ -202,7 +203,7 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // A1
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,9 +212,9 @@
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.txtToonies);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtChange);
+            this.Controls.Add(this.txtLoonies);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtPaid);
+            this.Controls.Add(this.txtChange);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNickels);
             this.Controls.Add(this.label5);
@@ -221,11 +222,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtQuarters);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtLoonies);
+            this.Controls.Add(this.txtPaid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label1);
-            this.Name = "A1";
+            this.Name = "Form1";
             this.Text = "Change Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,7 +237,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.TextBox txtLoonies;
+        private System.Windows.Forms.TextBox txtPaid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtQuarters;
         private System.Windows.Forms.Label label3;
@@ -244,9 +245,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNickels;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPaid;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtChange;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtLoonies;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtToonies;
         private System.Windows.Forms.Label label8;
